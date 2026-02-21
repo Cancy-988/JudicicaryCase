@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Impact - Triple Talaq Case</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <a href="index.html">Overview</a>
+    <a href="analysis.html">Analysis</a>
+    <a href="impact.html">Impact</a>
+</nav>
+
+<header>
+    <h1>Why This Case Changed India</h1>
+    <p>Impact & Legal Transformation</p>
+</header>
+
+<!-- Before vs After -->
+<section>
+    <h2>Before vs After 2017</h2>
+
+    <table>
+        <tr>
+            <th>Before 2017</th>
+            <th>After 2017</th>
+        </tr>
+        <tr>
+            <td>Instant divorce legally valid</td>
+            <td>Instant divorce unconstitutional</td>
+        </tr>
+        <tr>
+            <td>No judicial oversight</td>
+            <td>Subject to constitutional protection</td>
+        </tr>
+        <tr>
+            <td>No criminal consequences</td>
+            <td>Criminalized under 2019 Act</td>
+        </tr>
+    </table>
+</section>
+
+<!-- 2019 Act -->
+<section>
+    <h2>Legislative Follow-Up (2019)</h2>
+    <p>
+        After the 2017 judgment, Parliament passed the
+        Muslim Women (Protection of Rights on Marriage) Act, 2019.
+    </p>
+    <ul>
+        <li>Instant Triple Talaq made a criminal offense</li>
+        <li>Up to 3 years imprisonment</li>
+        <li>Strengthened legal protection for Muslim women</li>
+    </ul>
+</section>
+
+<!-- Real Impact -->
+<section>
+    <h2>Real-World Impact</h2>
+    <ul id="impact-list"></ul>
+</section>
+
+<!-- Insight Section -->
+<section>
+    <h2>200+ Pages → 10 Minute Insight</h2>
+    <p>
+        The original Supreme Court judgment spans over 200 pages.
+        This platform restructures it into a simplified, structured,
+        and readable format for public understanding.
+    </p>
+</section>
+<section>
+    <h2>Legal Reform Timeline</h2>
+    <canvas id="timelineChart"></canvas>
+</section>
+
+<section>
+    <h2>Constitutional Focus Shift</h2>
+    <canvas id="constitutionChart"></canvas>
+</section>
+<script>
+fetch("data.json")
+  .then(response => response.json())
+  .then(data => {
+
+    // Impact List
+    const impactList = document.getElementById("impact-list");
+    data.impact.forEach(point => {
+        const li = document.createElement("li");
+        li.textContent = point;
+        impactList.appendChild(li);
+    });
+
+    // 1️⃣ Timeline Chart
+    const timelineCtx = document.getElementById("timelineChart").getContext("2d");
+    new Chart(timelineCtx, {
+        type: "line",
+        data: {
+            labels: ["2016 Petition", "2017 Bench", "2017 Judgment", "2019 Act"],
+            datasets: [{
+                label: "Case Progress",
+                data: [1, 2, 3, 4],
+                tension: 0.4,
+                fill: false
+            }]
+        }
+    });
+
+    // 2️⃣ Constitutional Focus Chart
+    const constitutionCtx = document.getElementById("constitutionChart").getContext("2d");
+    new Chart(constitutionCtx, {
+        type: "line",
+        data: {
+            labels: ["Equality (Art 14)", "Religion (Art 25)", "Dignity (Art 21)"],
+            datasets: [{
+                label: "Constitutional Emphasis",
+                data: [9, 5, 7],
+                tension: 0.4,
+                fill: false
+            }]
+        }
+    });
+
+  });
+</script>
+
+</body>
+</html>

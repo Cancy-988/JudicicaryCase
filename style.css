@@ -1,0 +1,137 @@
+/* Global Styling */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Section Styling */
+section {
+    background: white;
+    margin: 30px auto;
+    padding: 30px;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+    margin-top: 0;
+    color: #1e3a8a;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 10px;
+}
+
+/* Timeline */
+#timeline-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+#timeline-list li {
+    background: #eef2ff;
+    margin: 10px 0;
+    padding: 12px;
+    border-left: 5px solid #2563eb;
+    border-radius: 5px;
+}
+
+/* Table Styling */
+table {
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #2563eb;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f3f4f6;
+}
+
+/* Lists */
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin: 8px 0;
+}
+
+/* Chart Section */
+#judgeChart {
+    max-width: 400px;
+    margin: 20px auto;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    section {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+}
+section p {
+    margin-bottom: 12px;
+}
+
+section strong {
+    color: #1e3a8a;
+}
+h3 {
+    color: #2563eb;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    margin-top: 15px;
+}
+
+th {
+    background-color: #1e3a8a;
+    color: white;
+}
+
+td, th {
+    padding: 10px;
+}
+
+canvas {
+    max-width: 700px;
+    margin: 30px auto;
+    display: block;
+}

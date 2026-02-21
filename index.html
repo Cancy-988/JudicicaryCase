@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Triple Talaq Case Study</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <a href="index.html">Overview</a>
+    <a href="analysis.html">Analysis</a>
+    <a href="impact.html">Impact</a>
+</nav>
+
+<!-- Hero Section -->
+<header>
+    <h1 id="case-name">Shayara Bano v. Union of India</h1>
+    <p>Understanding a 200+ Page Supreme Court Judgment in 10 Minutes</p>
+</header>
+
+<!-- Story Section -->
+<section>
+    <h2>The Story Behind the Case</h2>
+
+    <p>
+        Shayara Bano was married in 2002. In October 2015, her husband
+        declared “Triple Talaq” through a letter, instantly ending their marriage.
+    </p>
+
+    <p>
+        This form of divorce required no court process, no justification,
+        and no opportunity for reconciliation. The marriage ended immediately.
+    </p>
+
+    <p>
+        Believing this violated her fundamental rights,
+        she approached the Supreme Court of India in 2016.
+    </p>
+</section>
+
+<!-- What is Triple Talaq -->
+<section>
+    <h2>What is Triple Talaq?</h2>
+    <p>
+        Triple Talaq (Talaq-e-Biddat) allowed a Muslim man to divorce his wife
+        instantly by saying “talaq” three times.
+    </p>
+
+    <ul>
+        <li>No judicial oversight</li>
+        <li>No mandatory reason</li>
+        <li>No reconciliation period</li>
+        <li>Immediate and irreversible</li>
+    </ul>
+</section>
+
+<!-- Constitutional Conflict -->
+<section>
+    <h2>The Constitutional Conflict</h2>
+    <p>
+        The Supreme Court had to decide whether a religious practice
+        could override fundamental rights such as equality and dignity.
+    </p>
+
+    <p>
+        The key legal question was:
+        <strong>Does Triple Talaq violate Article 14 (Right to Equality)?</strong>
+    </p>
+</section>
+
+<!-- Case Snapshot -->
+<section>
+    <h2>Case Snapshot</h2>
+    <p><strong>Case Number:</strong> <span id="case-number"></span></p>
+    <p><strong>Judgment Date:</strong> <span id="judgment-date"></span></p>
+    <p><strong>Decision:</strong> <span id="decision"></span></p>
+    <p><strong>Bench Strength:</strong> <span id="bench-strength"></span></p>
+</section>
+
+<!-- Timeline -->
+<section>
+    <h2>Case Timeline</h2>
+    <ul id="timeline-list"></ul>
+</section>
+
+<!-- Judge Split Chart -->
+<section>
+    <h2>Judge Split (3:2 Decision)</h2>
+    <canvas id="judgeChart"></canvas>
+</section>
+
+<!-- Script -->
+<script>
+fetch("data.json")
+  .then(response => response.json())
+  .then(data => {
+
+    // Case Info
+    document.getElementById("case-number").textContent = data.case_info.case_number;
+    document.getElementById("judgment-date").textContent = data.case_info.judgment_date;
+    document.getElementById("decision").textContent = data.case_info.decision;
+    document.getElementById("bench-strength").textContent = data.case_info.bench_strength;
+
+    // Timeline
+    const timelineList = document.getElementById("timeline-list");
+    data.timeline.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item.date + " - " + item.event;
+        timelineList.appendChild(li);
+    });
+
+    // Chart
+    const ctx = document.getElementById("judgeChart").getContext("2d");
+    new Chart(ctx, {
+        type: "pie",
+        data: {
+            labels: ["Majority", "Dissent"],
+            datasets: [{
+                data: [data.case_info.majority, data.case_info.dissent]
+            }]
+        }
+    });
+
+  });
+</script>
+
+</body>
+</html>

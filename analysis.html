@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case Analysis - Triple Talaq</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-left">
+        <span class="logo">Legal Insight</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html" class="nav-link">Overview</a>
+        <a href="analysis.html" class="nav-link">Analysis</a>
+        <a href="impact.html" class="nav-link">Impact</a>
+    </div>
+
+    <div class="nav-right">
+        <button id="darkToggle">🌙</button>
+    </div>
+</nav>
+
+<header>
+    <h1>Inside the Supreme Court</h1>
+    <p>How the Judges Reasoned</p>
+</header>
+
+<!-- Bench Composition -->
+<section>
+    <h2>Bench Composition</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Opinion</th>
+            </tr>
+        </thead>
+        <tbody id="bench-table"></tbody>
+    </table>
+</section>
+
+<!-- Majority vs Dissent -->
+<section>
+    <h2>Majority vs Dissent – Simplified</h2>
+
+    <h3>Majority (3 Judges)</h3>
+    <ul>
+        <li>Triple Talaq is manifestly arbitrary.</li>
+        <li>Arbitrariness violates Article 14 (Equality).</li>
+        <li>Personal law is subject to constitutional scrutiny.</li>
+    </ul>
+
+    <h3>Dissent (2 Judges)</h3>
+    <ul>
+        <li>Triple Talaq is part of personal law.</li>
+        <li>Courts should not interfere in religious matters.</li>
+        <li>Reform should be done by Parliament.</li>
+    </ul>
+</section>
+
+<!-- Constitutional Articles -->
+<section>
+    <h2>Constitutional Articles Involved</h2>
+    <ul id="articles-list"></ul>
+</section>
+
+<!-- Legal Doctrines -->
+<section>
+    <h2>Legal Doctrines Applied</h2>
+    <ul id="doctrine-list"></ul>
+</section>
+
+<script>
+fetch("data.json")
+  .then(response => response.json())
+  .then(data => {
+
+    // Bench Table
+    const benchTable = document.getElementById("bench-table");
+    data.bench.forEach(judge => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${judge.name}</td>
+            <td>${judge.position}</td>
+            <td>${judge.opinion}</td>
+        `;
+        benchTable.appendChild(row);
+    });
+
+    // Articles
+    const articlesList = document.getElementById("articles-list");
+    data.constitutional_articles.forEach(article => {
+        const li = document.createElement("li");
+        li.textContent = article.article + " - " + article.meaning;
+        articlesList.appendChild(li);
+    });
+
+    // Legal Doctrines
+    const doctrineList = document.getElementById("doctrine-list");
+    data.legal_doctrines.forEach(doctrine => {
+        const li = document.createElement("li");
+        li.textContent = doctrine;
+        doctrineList.appendChild(li);
+    });
+
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+{
+  "case_info": {
+    "name": "Shayara Bano v. Union of India",
+    "court": "Supreme Court of India",
+    "case_number": "Writ Petition (Civil) No. 118 of 2016",
+    "judgment_date": "22 August 2017",
+    "bench_strength": 5,
+    "decision": "Instant Triple Talaq declared unconstitutional",
+    "majority": 3,
+    "dissent": 2
+  },
+
+  "bench": [
+    {
+      "name": "J. S. Khehar",
+      "position": "Chief Justice of India",
+      "opinion": "Dissent"
+    },
+    {
+      "name": "Abdul Nazeer",
+      "position": "Judge",
+      "opinion": "Dissent"
+    },
+    {
+      "name": "R. F. Nariman",
+      "position": "Judge",
+      "opinion": "Majority"
+    },
+    {
+      "name": "U. U. Lalit",
+      "position": "Judge",
+      "opinion": "Majority"
+    },
+    {
+      "name": "Kurian Joseph",
+      "position": "Judge",
+      "opinion": "Majority"
+    }
+  ],
+
+  "timeline": [
+    {
+      "date": "2016",
+      "event": "Writ Petition filed under Article 32 challenging Triple Talaq"
+    },
+    {
+      "date": "30 March 2017",
+      "event": "5-judge Constitution Bench formed"
+    },
+    {
+      "date": "11–18 May 2017",
+      "event": "Final hearings conducted"
+    },
+    {
+      "date": "22 August 2017",
+      "event": "Judgment delivered (3:2 majority)"
+    },
+    {
+      "date": "31 July 2019",
+      "event": "Muslim Women (Protection of Rights on Marriage) Act passed"
+    }
+  ],
+
+  "constitutional_articles": [
+    {
+      "article": "Article 14",
+      "meaning": "Right to Equality"
+    },
+    {
+      "article": "Article 15",
+      "meaning": "Prohibition of Discrimination"
+    },
+    {
+      "article": "Article 21",
+      "meaning": "Right to Life and Dignity"
+    },
+    {
+      "article": "Article 25",
+      "meaning": "Freedom of Religion"
+    },
+    {
+      "article": "Article 13",
+      "meaning": "Laws inconsistent with Fundamental Rights are void"
+    }
+  ],
+
+  "issues_framed": [
+    "Whether Triple Talaq is protected under Article 25",
+    "Whether Triple Talaq violates Article 14",
+    "Whether personal law can be tested under Fundamental Rights",
+    "Whether Triple Talaq is an essential religious practice"
+  ],
+
+  "legal_doctrines": [
+    "Doctrine of Manifest Arbitrariness",
+    "Essential Religious Practices Test",
+    "Constitutional Supremacy Principle"
+  ],
+
+  "impact": [
+    "Strengthened constitutional protection for Muslim women",
+    "Triggered legislative reform in 2019",
+    "Established that religious practices are subject to constitutional scrutiny"
+  ]
+}
